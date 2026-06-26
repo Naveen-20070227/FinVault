@@ -42,7 +42,7 @@
     --text-muted: #9f8bbd;
     --text-on-primary: #ffffff;
     
-    --glass-blur: blur(40px) saturate(200%);
+    --glass-blur: blur(12px) saturate(150%);
     --shadow-sm: 0 4px 6px -1px rgba(124, 58, 237, 0.03);
     --shadow-md: inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 15px 30px rgba(255, 255, 255, 0.3), inset 0 -12px 18px rgba(168, 85, 247, 0.04), 0 20px 40px rgba(124, 58, 237, 0.05);
     --shadow-lg: inset 0 1px 1px rgba(255, 255, 255, 0.95), inset 0 25px 45px rgba(255, 255, 255, 0.35), inset 0 -18px 24px rgba(168, 85, 247, 0.06), 0 30px 60px rgba(124, 58, 237, 0.1);

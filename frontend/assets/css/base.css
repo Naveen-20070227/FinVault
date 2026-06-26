@@ -14,14 +14,27 @@
 
 body {
     font-family: var(--font-body);
-    background: var(--bg-body);
-    background-size: 400% 400% !important;
-    animation: liquid-bg 20s ease infinite;
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
     line-height: 1.5;
     transition: color 0.3s ease;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-body);
+    background-size: 400% 400%;
+    animation: liquid-bg 20s ease infinite;
+    z-index: -1;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    pointer-events: none;
 }
 
 h1, h2, h3, h4, h5, h6 {

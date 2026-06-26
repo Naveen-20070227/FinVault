@@ -21,6 +21,7 @@
     z-index: 100;
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
     transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s;
+    will-change: transform;
 }
 
 .brand {

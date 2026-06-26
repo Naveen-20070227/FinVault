@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     
     # CORS
     # Can be a comma-separated list of origins
-    CORS_ORIGINS: Union[str, List[str]] = "http://localhost:5500,http://127.0.0.1:5500,http://localhost:8000,http://127.0.0.1:8000"
+    CORS_ORIGINS: Union[str, List[str]] = "http://localhost:5500,http://127.0.0.1:5500,http://localhost:8000,http://127.0.0.1:8000,https://fin-vault-ten.vercel.app"
     
     # File Uploads
     UPLOAD_DIR: str = "uploads"

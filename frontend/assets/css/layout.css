@@ -246,6 +246,8 @@
 @media (max-width: 1024px) {
     .sidebar {
         transform: translateX(-100%);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
     
     .sidebar.open {

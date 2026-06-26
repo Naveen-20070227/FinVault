@@ -21,3 +21,12 @@
     /* Background adjustments */
     --color-primary-50: rgba(168, 85, 247, 0.06);
 }
+
+@media (max-width: 1024px) {
+    [data-theme="dark"] {
+        --glass-blur: none;
+        --bg-card: linear-gradient(135deg, rgba(30, 24, 48, 0.95) 0%, rgba(20, 15, 35, 0.95) 100%);
+        --bg-sidebar: linear-gradient(180deg, rgba(25, 20, 42, 0.98) 0%, rgba(15, 10, 30, 0.98) 100%);
+        --bg-modal: linear-gradient(135deg, rgba(35, 28, 55, 0.98) 0%, rgba(20, 15, 35, 0.98) 100%);
+    }
+}

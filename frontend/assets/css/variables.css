@@ -52,3 +52,12 @@
     --radius-lg: 24px;
     --radius-xl: 32px;
 }
+
+@media (max-width: 1024px) {
+    :root {
+        --glass-blur: none;
+        --bg-card: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.85) 100%);
+        --bg-sidebar: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.92) 100%);
+        --bg-modal: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+    }
+}

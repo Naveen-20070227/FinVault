@@ -457,6 +457,7 @@
     padding: 24px;
     max-height: 70vh;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal-footer {
@@ -471,6 +472,7 @@
 .table-container {
     width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
     background: var(--bg-card);
@@ -595,6 +597,7 @@ tr:hover td {
 
 .notif-dropdown-list {
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     flex: 1;
     display: flex;
     flex-direction: column;

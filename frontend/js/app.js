@@ -197,14 +197,17 @@ function attachGlobalListeners() {
         }
     });
 
-    // 6. Mobile Sidebar Toggle
+    // 6. Mobile Sidebar Toggle & Close on Navigation
     document.addEventListener("click", (e) => {
         const toggle = e.target.closest("#mobile-nav-toggle");
         const sidebar = document.getElementById("sidebar-container");
+        const navLink = e.target.closest(".sidebar .nav-item a");
         if (toggle && sidebar) {
             sidebar.classList.toggle("open");
-        } else if (sidebar && sidebar.classList.contains("open") && !e.target.closest("#sidebar-container")) {
-            sidebar.classList.remove("open");
+        } else if (sidebar && sidebar.classList.contains("open")) {
+            if (!e.target.closest("#sidebar-container") || navLink) {
+                sidebar.classList.remove("open");
+            }
         }
     });
 

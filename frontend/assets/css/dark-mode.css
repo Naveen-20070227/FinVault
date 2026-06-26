@@ -1,0 +1,23 @@
+[data-theme="dark"] {
+    /* Base Overrides */
+    --bg-body:    linear-gradient(135deg, #0e0a24, #1c0e35, #07050f, #130a2a, #0c0818);
+    --bg-card:    linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    --bg-sidebar: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+    --bg-input:   rgba(255, 255, 255, 0.03);
+    --bg-modal:   linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(168, 85, 247, 0.25);
+    
+    --text-primary: #f5f3f7;
+    --text-secondary: #c7aee8;
+    --text-muted: #8e7ea6;
+    
+    --glass-blur: blur(40px) saturate(220%);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+    --shadow-md: inset 0 1px 1px rgba(255, 255, 255, 0.25), inset 0 15px 30px rgba(255, 255, 255, 0.05), inset 0 -12px 18px rgba(0, 0, 0, 0.35), 0 20px 40px rgba(0, 0, 0, 0.5);
+    --shadow-lg: inset 0 1px 1px rgba(255, 255, 255, 0.35), inset 0 25px 45px rgba(255, 255, 255, 0.08), inset 0 -18px 24px rgba(0, 0, 0, 0.45), 0 30px 60px rgba(0, 0, 0, 0.65);
+    
+    /* Background adjustments */
+    --color-primary-50: rgba(168, 85, 247, 0.06);
+}

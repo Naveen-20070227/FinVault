@@ -1,0 +1,48 @@
+<div class="reports-page fade-in">
+    <!-- Reports Selector Card -->
+    <div class="card" style="padding:20px; margin-bottom:24px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div class="tabs" id="reports-type-tabs">
+                <div class="tab active" data-type="monthly">Monthly Statement</div>
+                <div class="tab" data-type="yearly">Yearly Statement</div>
+            </div>
+            
+            <!-- Monthly inputs -->
+            <div id="reports-monthly-inputs" style="display:flex; align-items:center; gap:12px;">
+                <label class="form-label" style="margin-bottom:0; font-weight:700;">Statement Period:</label>
+                <input class="form-control" type="month" id="reports-month-filter" style="width:160px; margin-bottom:0;">
+            </div>
+            
+            <!-- Yearly inputs (hidden initially) -->
+            <div id="reports-yearly-inputs" style="display:none; align-items:center; gap:12px;">
+                <label class="form-label" style="margin-bottom:0; font-weight:700;">Select Year:</label>
+                <select class="form-select" id="reports-year-filter" style="width:120px; margin-bottom:0;">
+                    <!-- Dynamically populated -->
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Options Card (Actions) -->
+    <div class="card" style="padding:20px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <span style="font-size:0.9rem; font-weight:700; color:var(--text-secondary);" id="reports-export-label">
+            Export Monthly Report for June 2026:
+        </span>
+        <div style="display:flex; gap:12px;">
+            <button class="btn btn-secondary" id="export-csv-btn">
+                <i class="ti-download" style="color:var(--color-info);"></i><span>Export CSV</span>
+            </button>
+            <button class="btn btn-secondary" id="export-xlsx-btn">
+                <i class="ti-download" style="color:var(--color-success);"></i><span>Export Excel</span>
+            </button>
+            <button class="btn btn-primary" id="export-pdf-btn">
+                <i class="ti-download"></i><span>Export PDF</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Report Preview Area -->
+    <div id="reports-preview-container">
+        <!-- Rendered dynamically by controller -->
+    </div>
+</div>

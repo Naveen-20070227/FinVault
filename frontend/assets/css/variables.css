@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Brand Palette - Purple */
+    --color-primary-50:  #faf5ff;
+    --color-primary-100: #f3e8ff;
+    --color-primary-200: #e9d5ff;
+    --color-primary-300: #d8b4fe;
+    --color-primary-400: #c084fc;
+    --color-primary-500: #a855f7;   /* Main Brand Accent */
+    --color-primary-600: #9333ea;
+    --color-primary-700: #7c3aed;   /* Primary Actions */
+    --color-primary-800: #6b21a8;
+    --color-primary-900: #581c87;
+
+    /* Semantic Colors */
+    --color-success: #10b981;
+    --color-success-bg: rgba(16, 185, 129, 0.15);
+    --color-warning: #f59e0b;
+    --color-warning-bg: rgba(245, 158, 11, 0.15);
+    --color-danger:  #ef4444;
+    --color-danger-bg: rgba(239, 68, 68, 0.15);
+    --color-info:    #3b82f6;
+    --color-info-bg: rgba(59, 130, 246, 0.15);
+
+    /* Fonts */
+    --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Light Theme (Default) */
+    --bg-body: linear-gradient(135deg, #f3e8ff, #fae8ff, #e0f2fe, #f3e8ff);
+    --bg-card: linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.1) 100%);
+    --bg-sidebar: linear-gradient(180deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.18) 100%);
+    --bg-input: rgba(255, 255, 255, 0.35);
+    --bg-modal: linear-gradient(135deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.24) 100%);
+    
+    --border-color: rgba(255, 255, 255, 0.55);
+    --border-glow: rgba(168, 85, 247, 0.18);
+    
+    --text-primary: #1e0b36;
+    --text-secondary: #6e5494;
+    --text-muted: #9f8bbd;
+    --text-on-primary: #ffffff;
+    
+    --glass-blur: blur(40px) saturate(200%);
+    --shadow-sm: 0 4px 6px -1px rgba(124, 58, 237, 0.03);
+    --shadow-md: inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 15px 30px rgba(255, 255, 255, 0.3), inset 0 -12px 18px rgba(168, 85, 247, 0.04), 0 20px 40px rgba(124, 58, 237, 0.05);
+    --shadow-lg: inset 0 1px 1px rgba(255, 255, 255, 0.95), inset 0 25px 45px rgba(255, 255, 255, 0.35), inset 0 -18px 24px rgba(168, 85, 247, 0.06), 0 30px 60px rgba(124, 58, 237, 0.1);
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+}

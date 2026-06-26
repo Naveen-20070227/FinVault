@@ -1,0 +1,93 @@
+<div class="settings-page fade-in">
+    <div class="grid-cols-2">
+        <!-- Column 1: Profile & Preferences -->
+        <div style="display:flex; flex-direction:column; gap:24px;">
+            <!-- Profile Settings -->
+            <div class="card">
+                <h3 class="card-title">User Profile Details</h3>
+                <form id="settings-profile-form">
+                    <div style="display:flex; align-items:center; gap:20px; margin-bottom:20px;">
+                        <img class="user-avatar" id="settings-avatar-preview" src="" style="width:70px; height:70px; border:2px solid var(--color-primary-400);">
+                        <div style="display:flex; flex-direction:column; gap:6px;">
+                            <label class="btn btn-secondary" for="settings-avatar-file" style="padding:6px 12px; font-size:0.8rem; margin-bottom:0;">
+                                <i class="ti-image"></i><span>Change Avatar</span>
+                            </label>
+                            <input type="file" id="settings-avatar-file" accept="image/png, image/jpeg" style="display:none;">
+                            <span style="font-size:0.7rem; color:var(--text-muted);">Max size 5MB. PNG or JPG only.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="settings-username">Username</label>
+                        <input class="form-control" type="text" id="settings-username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="settings-email">Email Address</label>
+                        <input class="form-control" type="email" id="settings-email" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="margin-top:10px;">Save Profile</button>
+                </form>
+            </div>
+
+            <!-- Preferences Settings -->
+            <div class="card">
+                <h3 class="card-title">Preferences</h3>
+                <form id="settings-pref-form">
+                    <div class="form-group">
+                        <label class="form-label" for="settings-currency">Base Currency</label>
+                        <select class="form-select" id="settings-currency">
+                            <option value="₹">₹ (INR)</option>
+                            <option value="$">$ (USD)</option>
+                            <option value="€">€ (EUR)</option>
+                            <option value="£">£ (GBP)</option>
+                            <option value="¥">¥ (JPY)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="settings-threshold">Large Expense Alert Threshold</label>
+                        <input class="form-control" type="number" id="settings-threshold" step="1" min="1" required>
+                        <span style="font-size:0.75rem; color:var(--text-muted);">Receive notifications for transactions exceeding this amount.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <label class="form-label" for="settings-warning-pct">Budget Warning Threshold</label>
+                            <span style="font-size:0.8rem; font-weight:700; color:var(--color-primary-700);" id="warning-pct-val">80%</span>
+                        </div>
+                        <input type="range" id="settings-warning-pct" min="50" max="100" step="5" style="width:100%; accent-color:var(--color-primary-500); margin-top:8px;">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="margin-top:10px;">Save Preferences</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Column 2: Account Security -->
+        <div style="display:flex; flex-direction:column; gap:24px;">
+            <div class="card">
+                <h3 class="card-title">Change Account Password</h3>
+                <form id="settings-security-form">
+                    <div class="form-group">
+                        <label class="form-label" for="settings-old-pwd">Current Password</label>
+                        <input class="form-control" type="password" id="settings-old-pwd" required placeholder="••••••••">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="settings-new-pwd">New Password (min 8 chars)</label>
+                        <input class="form-control" type="password" id="settings-new-pwd" minlength="8" required placeholder="••••••••">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="settings-confirm-pwd">Confirm New Password</label>
+                        <input class="form-control" type="password" id="settings-confirm-pwd" required placeholder="••••••••">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="margin-top:10px;">Update Password</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

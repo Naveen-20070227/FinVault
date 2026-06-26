@@ -1,0 +1,64 @@
+<div class="transactions-page fade-in">
+    <!-- Top Filter & Action Panel -->
+    <div class="card" style="padding: 20px; margin-bottom: 24px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div style="display:flex; align-items:center; gap:12px; flex:1; min-width:300px;">
+                <!-- Search -->
+                <div style="position:relative; flex:1;">
+                    <i class="ti-search" style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:var(--text-muted);"></i>
+                    <input class="form-control" type="text" id="tx-search-input" placeholder="Search title or notes..." style="padding-left:40px;">
+                </div>
+                
+                <!-- Month Picker -->
+                <input class="form-control" type="month" id="tx-month-input" style="width:180px;">
+            </div>
+            
+            <button class="btn btn-primary" id="add-transaction-btn">
+                <i class="ti-plus"></i><span>Add Transaction</span>
+            </button>
+        </div>
+        
+        <!-- Secondary Filters Row -->
+        <div style="display:flex; gap:16px; margin-top:16px; flex-wrap:wrap;">
+            <div class="form-group" style="margin-bottom:0; flex:1; min-width:140px;">
+                <select class="form-select" id="tx-type-filter">
+                    <option value="">All Types</option>
+                    <option value="expense">Expenses</option>
+                    <option value="income">Incomes</option>
+                </select>
+            </div>
+            
+            <div class="form-group" style="margin-bottom:0; flex:1; min-width:160px;">
+                <select class="form-select" id="tx-category-filter">
+                    <option value="">All Categories</option>
+                    <!-- Loaded dynamically -->
+                </select>
+            </div>
+            
+            <div class="form-group" style="margin-bottom:0; flex:1; min-width:160px;">
+                <select class="form-select" id="tx-sort-filter">
+                    <option value="date_desc">Newest First</option>
+                    <option value="date_asc">Oldest First</option>
+                    <option value="amount_desc">Highest Amount</option>
+                    <option value="amount_asc">Lowest Amount</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transactions List Table -->
+    <div id="transactions-list-container">
+        <!-- Rendered by controller (with skeletons) -->
+    </div>
+
+    <!-- Pagination Controls -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px; flex-wrap:wrap; gap:16px;">
+        <span style="font-size:0.85rem; color:var(--text-secondary);" id="tx-pagination-info">
+            Showing 0 - 0 of 0 transactions
+        </span>
+        <div style="display:flex; gap:8px;">
+            <button class="btn btn-secondary" id="tx-prev-page-btn" disabled><i class="ti-angle-left"></i><span>Prev</span></button>
+            <button class="btn btn-secondary" id="tx-next-page-btn" disabled><span>Next</span><i class="ti-angle-right"></i></button>
+        </div>
+    </div>
+</div>

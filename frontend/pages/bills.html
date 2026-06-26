@@ -1,0 +1,106 @@
+<div class="bills-page fade-in">
+    <!-- Header control -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+        <h2 style="font-size:1.4rem; font-weight:700;">Utility Bills & Subscriptions</h2>
+        <button class="btn btn-primary" id="add-bill-btn">
+            <i class="ti-plus"></i><span>Add Bill</span>
+        </button>
+    </div>
+
+    <!-- Three Column Layout (Overdue, Due Soon, Future/Paid) -->
+    <div class="grid-cols-3">
+        <!-- Column 1: Overdue -->
+        <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                <span class="badge badge-overdue" style="width:12px; height:12px; border-radius:50%; padding:0;"></span>
+                <h3 style="font-size:1.1rem; font-weight:700;">Overdue</h3>
+            </div>
+            <div class="bills-column-list" id="bills-overdue-col" style="display:flex; flex-direction:column; gap:12px; min-height:100px;">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Column 2: Due Soon -->
+        <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                <span class="badge badge-pending" style="width:12px; height:12px; border-radius:50%; padding:0;"></span>
+                <h3 style="font-size:1.1rem; font-weight:700;">Due Soon (7 Days)</h3>
+            </div>
+            <div class="bills-column-list" id="bills-soon-col" style="display:flex; flex-direction:column; gap:12px; min-height:100px;">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Column 3: Paid & Upcoming -->
+        <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                <span class="badge badge-paid" style="width:12px; height:12px; border-radius:50%; padding:0;"></span>
+                <h3 style="font-size:1.1rem; font-weight:700;">Upcoming & Paid</h3>
+            </div>
+            <div class="bills-column-list" id="bills-upcoming-col" style="display:flex; flex-direction:column; gap:12px; min-height:100px;">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Bill Card Styles */
+.bill-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px !important;
+    position: relative;
+    border-left: 4px solid var(--border-color);
+}
+
+.bill-card.overdue {
+    border-left-color: var(--color-danger);
+}
+
+.bill-card.due-soon {
+    border-left-color: var(--color-warning);
+}
+
+.bill-card.paid {
+    border-left-color: var(--color-success);
+    opacity: 0.85;
+}
+
+.bill-title-label {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-right: 50px;
+}
+
+.bill-meta-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.bill-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 4px;
+}
+
+.bill-corner-actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.bill-card:hover .bill-corner-actions {
+    opacity: 1;
+}
+</style>

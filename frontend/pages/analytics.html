@@ -1,0 +1,46 @@
+<div class="analytics-page fade-in">
+    <!-- Row 1: Category Breakdown & Budget Performance -->
+    <div class="grid-cols-2">
+        <div class="card" style="display:flex; flex-direction:column;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <h3 class="card-title" style="margin-bottom:0;">Expense Category Breakdown</h3>
+                <input class="form-control" type="month" id="analytics-month-filter" style="width:160px; margin-bottom:0; padding: 6px 12px; font-size:0.85rem;">
+            </div>
+            <div class="chart-container" style="flex:1;">
+                <canvas id="chart-category-breakdown"></canvas>
+                <div id="analytics-category-empty" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center; color:var(--text-muted);">
+                    <i class="ti-pie-chart" style="font-size:2.5rem; margin-bottom:8px;"></i>
+                    <p>No expense data recorded for this month</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="display:flex; flex-direction:column; height: 350px;">
+            <h3 class="card-title">Budget Limit Performance</h3>
+            <div class="chart-container" style="flex:1;">
+                <canvas id="chart-budget-performance"></canvas>
+                <div id="analytics-budget-empty" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center; color:var(--text-muted);">
+                    <i class="ti-pie-chart" style="font-size:2.5rem; margin-bottom:8px;"></i>
+                    <p>No budgets configured for this period</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Income vs Expense Trend & Savings Cumulative Growth -->
+    <div class="grid-cols-2" style="margin-top:24px;">
+        <div class="card" style="display:flex; flex-direction:column; height: 350px;">
+            <h3 class="card-title">6-Month Income vs Expense Trend</h3>
+            <div class="chart-container" style="flex:1;">
+                <canvas id="chart-income-vs-expense"></canvas>
+            </div>
+        </div>
+
+        <div class="card" style="display:flex; flex-direction:column; height: 350px;">
+            <h3 class="card-title">12-Month Cumulative Savings Growth</h3>
+            <div class="chart-container" style="flex:1;">
+                <canvas id="chart-savings-growth"></canvas>
+            </div>
+        </div>
+    </div>
+</div>

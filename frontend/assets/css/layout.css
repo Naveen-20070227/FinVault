@@ -15,9 +15,9 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    height: 100vh;
-    left: 0;
     top: 0;
+    bottom: 0;
+    left: 0;
     z-index: 100;
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
     transition: transform 0.15s ease-out, background 0.15s;
@@ -253,6 +253,10 @@
     
     .sidebar.open {
         transform: translateX(0);
+    }
+    
+    .sidebar-footer {
+        padding-bottom: 50px;
     }
     
     .main-content {

@@ -6,6 +6,8 @@ import { toast } from "../utils/toast.js";
 import { skeleton } from "../utils/skeleton.js";
 import { safeHtml, markSafe } from "../utils/dom.js";
 import { store } from "../store.js";
+import { BACKEND_URL } from "../services/api.js";
+
 
 // Page State
 let filters = {
@@ -135,7 +137,7 @@ function renderTable(transactions) {
         let receiptEl = "-";
         if (tx.receipt_image) {
             receiptEl = safeHtml`
-                <a href="/uploads/${tx.receipt_image}" target="_blank" class="btn btn-secondary btn-icon" style="width:28px; height:28px;" title="View Receipt">
+                <a href="${BACKEND_URL}/uploads/${tx.receipt_image}" target="_blank" class="btn btn-secondary btn-icon" style="width:28px; height:28px;" title="View Receipt">
                     <i class="ti-image"></i>
                 </a>
             `;

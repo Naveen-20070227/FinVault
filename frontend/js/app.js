@@ -4,6 +4,7 @@ import { authService } from "./services/auth.service.js";
 import { notificationService } from "./services/notification.service.js";
 import { toast } from "./utils/toast.js";
 import { modalManager } from "./utils/modal.js";
+import { BACKEND_URL } from "./services/api.js";
 
 // Update Topbar username and avatar from store
 function updateTopbarUserUI() {
@@ -17,7 +18,8 @@ function updateTopbarUserUI() {
 
     if (avatarEl) {
         if (user && user.profile_image) {
-            avatarEl.src = `/uploads/${user.profile_image}`;
+            avatarEl.src = `${BACKEND_URL}/uploads/${user.profile_image}`;
+
         } else {
             avatarEl.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23a855f7'><circle cx='50' cy='35' r='20'/><path d='M50,60 C30,60 15,75 15,90 L85,90 C85,75 70,60 50,60 Z'/></svg>";
         }

@@ -1,6 +1,8 @@
 import { authService } from "../services/auth.service.js";
 import { store } from "../store.js";
 import { toast } from "../utils/toast.js";
+import { BACKEND_URL } from "../services/api.js";
+
 
 export function init() {
     loadUserSettings();
@@ -23,7 +25,7 @@ function loadUserSettings() {
     const avatarPreview = document.getElementById("settings-avatar-preview");
     if (avatarPreview) {
         if (user.profile_image) {
-            avatarPreview.src = `/uploads/${user.profile_image}`;
+            avatarPreview.src = `${BACKEND_URL}/uploads/${user.profile_image}`;
         } else {
             avatarPreview.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23a855f7'><circle cx='50' cy='35' r='20'/><path d='M50,60 C30,60 15,75 15,90 L85,90 C85,75 70,60 50,60 Z'/></svg>";
         }
@@ -66,8 +68,8 @@ function attachListeners() {
                 const preview = document.getElementById("settings-avatar-preview");
                 const topbarAvatar = document.getElementById("topbar-avatar");
                 
-                if (preview) preview.src = `/uploads/${updatedUser.profile_image}`;
-                if (topbarAvatar) topbarAvatar.src = `/uploads/${updatedUser.profile_image}`;
+                if (preview) preview.src = `${BACKEND_URL}/uploads/${updatedUser.profile_image}`;
+                if (topbarAvatar) topbarAvatar.src = `${BACKEND_URL}/uploads/${updatedUser.profile_image}`;
                 
                 toast.success("Avatar image uploaded successfully");
             } catch (err) {

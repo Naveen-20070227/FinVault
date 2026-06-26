@@ -1,7 +1,23 @@
 import { store } from "../store.js";
 import { router } from "../router.js";
 
-const BASE_URL = "/api/v1";
+const getBackendUrl = () => {
+    const hostname = window.location.hostname;
+    // If running on Vercel or any other deployed frontend
+    if (hostname.includes("vercel.app") || hostname.includes("github.io")) {
+        return "https://finvault-zsby.onrender.com";
+    }
+    // If running locally on a separate port (like 5500 for Live Server)
+    if ((hostname === "localhost" || hostname === "127.0.0.1") && window.location.port !== "8000") {
+        return "http://localhost:8000";
+    }
+    // Default to relative path (for when backend serves frontend or they share domain)
+    return "";
+};
+
+export const BACKEND_URL = getBackendUrl();
+const BASE_URL = `${BACKEND_URL}/api/v1`;
+
 
 class ApiService {
     async request(endpoint, options = {}) {

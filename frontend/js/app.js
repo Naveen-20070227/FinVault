@@ -64,24 +64,27 @@ function updateNotificationBadge() {
 // Load external UI components programmatically
 async function loadGlobalComponents() {
     try {
-        const version = Date.now();
-        const sidebarHtml = await fetch(`components/sidebar.html?v=${version}`).then(r => r.text());
+        const version = "1.0.0";
+        const [sidebarHtml, topbarHtml, modalsHtml, toastHtml] = await Promise.all([
+            fetch(`components/sidebar.html?v=${version}`).then(r => r.text()),
+            fetch(`components/topbar.html?v=${version}`).then(r => r.text()),
+            fetch(`components/modals.html?v=${version}`).then(r => r.text()),
+            fetch(`components/toast.html?v=${version}`).then(r => r.text())
+        ]);
+
         const sidebarEl = document.getElementById("sidebar-container");
         if (sidebarEl) sidebarEl.innerHTML = sidebarHtml;
 
-        const topbarHtml = await fetch(`components/topbar.html?v=${version}`).then(r => r.text());
         const topbarEl = document.getElementById("topbar-container");
         if (topbarEl) topbarEl.innerHTML = topbarHtml;
 
         // Load modals
-        const modalsHtml = await fetch(`components/modals.html?v=${version}`).then(r => r.text());
         const modalWrap = document.createElement("div");
         modalWrap.id = "global-modals";
         modalWrap.innerHTML = modalsHtml;
         document.body.appendChild(modalWrap);
 
         // Load toast container
-        const toastHtml = await fetch(`components/toast.html?v=${version}`).then(r => r.text());
         const toastWrap = document.createElement("div");
         toastWrap.id = "global-toast";
         toastWrap.innerHTML = toastHtml;
@@ -362,10 +365,14 @@ async function boot() {
     attachGlobalListeners();
     attachAuthListeners();
     
-    // 4. Verify session (fetch user if token exists)
-    await verifySession();
+    // 4. Verify session in background (does not block initial render)
+    if (store.state.accessToken) {
+        verifySession().catch(() => {}).then(() => {
+            updateTopbarUserUI();
+        });
+    }
     
-    // 5. Initialize router
+    // 5. Initialize router immediately
     await router.init();
     
     // Initialize Modal managers

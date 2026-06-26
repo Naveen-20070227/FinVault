@@ -69,7 +69,7 @@ class Router {
             // Fetch and inject HTML page fragment (with caching)
             let htmlContent = this.cachedFragments[route.html];
             if (!htmlContent) {
-                const response = await fetch(`${route.html}?v=${Date.now()}`);
+                const response = await fetch(`${route.html}?v=1.0.0`);
                 if (!response.ok) throw new Error(`Failed to load page: ${response.statusText}`);
                 htmlContent = await response.text();
                 this.cachedFragments[route.html] = htmlContent;
